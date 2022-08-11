@@ -1,0 +1,48 @@
+[
+	{
+		"account_list" : 
+		[
+			{
+				"account_name" : "KB_Star",
+				"account_number" : "12-3456-789",
+				"balance" : 10000,
+				"customer_name" : "Haeri Kang"
+			},
+			{
+				"account_name" : "KB_Tenten",
+				"account_number" : "11-2222-333",
+				"balance" : 20000000,
+				"customer_name" : "Haeri Kang"
+			}
+		],
+		"card_number" : "1234567812345678",
+		"customer_name" : "Haeri Kang",
+		"pin" : 1234
+	},
+	{
+		"account_list" : 
+		[
+			{
+				"account_name" : "Plus",
+				"account_number" : "3525-15-2222-457544",
+				"balance" : 35240000000,
+				"customer_name" : "Sunim Lee"
+			},
+			{
+				"account_name" : "Light Plus",
+				"account_number" : "65454-654-1211-3333",
+				"balance" : 11000,
+				"customer_name" : "Sunim Lee"
+			},
+			{
+				"account_name" : "One_plus_One",
+				"account_number" : "65454-654-1333-3333",
+				"balance" : 11000700000,
+				"customer_name" : "Sunim Lee"
+			}
+		],
+		"card_number" : "1111222233334444",
+		"customer_name" : "Sunim Lee",
+		"pin" : 4321
+	}
+]
