@@ -1,14 +1,35 @@
 #include "ATMController.h"
 
-ATMController::ATMController() : is_card_inserted(false), is_acount_selected(false)
+ATMController::ATMController() : 
+	is_card_inserted(false), is_acount_selected(false),
+	card_pool(), inserted_card(), selected_account()
+{}
+
+bool ATMController::loadDataFromDB()
 {
+	return card_pool.loadCardInformationFromDB();
+}
+
+bool ATMController::testDataWithJson(string path)
+{
+	return card_pool.loadCardInformationFromJSON(path);
 }
 
 bool ATMController::checkVaildCardNumber(string card_number)
 {
 	is_card_inserted = true;
 	// search card number in cardpool and get card object
+	if (card_pool.getCardInfo(card_number, inserted_card))
+		return true;
 	return false;
+}
+
+void ATMController::takeoffCard()
+{
+	inserted_card = Card();
+	selected_account = Account();
+	is_card_inserted = false;
+	is_acount_selected = false;
 }
 
 bool ATMController::inputPinNumber(int pin_number)
@@ -39,12 +60,12 @@ int ATMController::showAccountBalance()
 		return -1;
 }
 
-void ATMController::depositToAccount(int amount)
+int ATMController::depositToAccount(int amount)
 {
-	selected_account.deposit(amount);
+	return selected_account.deposit(amount);
 }
 
-void ATMController::withdrawToAccount(int amount)
+int ATMController::withdrawFromAccount(int amount)
 {
-	selected_account.withdraw(amount);
+	return selected_account.withdraw(amount);
 }
